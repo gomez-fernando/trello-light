@@ -31,6 +31,7 @@ export const appStateReducer = (
       break;
     }
     case "ADD_TASK": {
+      console.log('add tassk');
       const { text, listId } = action.payload;
       const targetListIndex = findItemIndexById(draft.lists, listId);
 
