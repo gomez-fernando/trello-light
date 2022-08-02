@@ -42,8 +42,6 @@ export const AppStateProvider: FC = ({ children }) => {
   const { lists, draggedItem } = state;
 
   const getTasksByListId = (id: string) => {
-    console.log(lists)
-
     return lists.find((list) => list.id === id)?.tasks || [];
   };
 
