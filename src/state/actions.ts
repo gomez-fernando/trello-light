@@ -4,6 +4,15 @@ export type Action =
   | { type: "ADD_LIST"; payload: string }
   | { type: "ADD_TASK"; payload: { text: string; listId: string } }
   | { type: "MOVE_LIST"; payload: { draggedId: string; hoverId: string } }
+  | {
+      type: "MOVE_TASK";
+      payload: {
+        draggedItemId: string;
+        hoveredItemId: string | null;
+        sourceColumnId: string;
+        targetColumnId: string;
+      };
+    }
   | { type: "SET_DRAGGED_ITEM"; payload: DragItem | null };
 
 export const addList = (text: string): Action => ({
@@ -28,6 +37,16 @@ export const moveList = (draggedId: string, hoverId: string): Action => ({
 });
 
 export const setDraggedItem = (draggedItem: DragItem | null): Action => ({
-  type: 'SET_DRAGGED_ITEM',
-  payload: draggedItem
+  type: "SET_DRAGGED_ITEM",
+  payload: draggedItem,
+});
+
+export const moveTask = (draggedItemId: string, hoveredItemId: string | null, sourceColumnId: string, targetColumnId: string) => ({
+  type: 'MOVE_TASK',
+  payload: {
+    draggedItemId,
+    hoveredItemId,
+    sourceColumnId,
+    targetColumnId
+  }
 })

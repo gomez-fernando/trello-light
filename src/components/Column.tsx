@@ -43,7 +43,7 @@ export const Column = ({ text, id, isPreview }: ColumnProps) => {
     <ColumnContainer ref={ref} isPreview={isPreview} isHidden={isHidden(draggedItem, "COLUMN", id, isPreview)}>
       <ColumnTitle>{text}</ColumnTitle>
       {tasks.map((task) => (
-        <Card text={task.text} key={task.id} id={task.id} />
+        <Card text={task.text} key={task.id} id={task.id} columnId={id} />
       ))}
       <AddNewItem
         toggleButtonText="+ Add another card"
