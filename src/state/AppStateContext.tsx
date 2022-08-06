@@ -10,17 +10,17 @@ const appData: AppState = {
     {
       id: "1",
       text: "To Do",
-      tasks: [{ id: "c1", text: "Third task" }],
+      tasks: [{ id: "c1", text: "Buy some coffee" }],
     },
     {
       id: "2",
       text: "In Progress",
-      tasks: [{ id: "c2", text: "Second task" }],
+      tasks: [{ id: "c2", text: "Play with dogs" }],
     },
     {
       id: "3",
       text: "Done",
-      tasks: [{ id: "c3", text: "First task" }],
+      tasks: [{ id: "c3", text: "Take a walk" }],
     },
   ],
 };
